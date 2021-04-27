@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "This application is designed to display information about a healthy lifestyle",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kseniaparhomenko/information-site.git"
+  },
+  "author": "Ksenia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kseniaparhomenko/information-site/issues"
+  },
+  "homepage": "https://github.com/kseniaparhomenko/information-site#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5"
+  }
+}
