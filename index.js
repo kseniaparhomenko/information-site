@@ -1,10 +1,10 @@
-const express = require('express'); // Fast, unopinionated, minimalist web framework for node.
-const app = express(); // Initiate Express Application
-const mongoose = require('mongoose'); // Node Tool for MongoDB
+const express = require('express'); 
+const app = express(); 
+const mongoose = require('mongoose'); // Node інструменти для MongoDB
 const config = require('./config/db'); // Mongoose Config
-const path = require('path'); // NodeJS Package for file paths
+const path = require('path'); // Пакет NodeJS для шляхів до файлів
 
-// Database Connection
+// Підключення до бази даних
 mongoose.Promise = global.Promise;
 mongoose.connect(config.uri, (err) => {
   if (err) {
@@ -14,15 +14,15 @@ mongoose.connect(config.uri, (err) => {
   }
 });
 
-// Provide static directory for frontend
+//надання статичноо каталогу для інтерфейсу
 app.use(express.static(__dirname + '/front-end/dist/front-end'));
 
-// Connect server to Angular 2 Index.html
+// Зєднання з  Angular 2 Index.html
 app.get('*', (req, res) => {
  res.sendFile(path.join(__dirname + '/front-end/dist/front-end/index.html'));
 });
 
-// Start Server: Listen on port 3000
+// Запуск сервера 
 app.listen(3000, () => {
   console.log('Сервер був запущений по порті: 3000');
 });
